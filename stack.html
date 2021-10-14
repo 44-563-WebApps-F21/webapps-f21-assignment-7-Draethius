@@ -31,10 +31,12 @@
 		  <div class = "stack">row item 3</div>  
 		</div>
 	
-	<p> Press the button to create an new element of type div and then add it to the container.
-		</p>
-		<button onclick="makeNewDiv()">Push Value</button>
-	
+	<p> Press the button to create an new element of type div and then add it to the container.</p>
+	<button onclick="makeNewDiv()">Push Value</button>
+	<button onclick = "popItem()">Pop</button>
+	<button onclick = "zap()">Zap values</button>
+
+
 	<input id = "input" type = "text">
 	
 </body>
@@ -50,7 +52,25 @@
 		/* add it to the container */
 		document.getElementById('target').appendChild(element)
 		
-		
+	}
+	function popItem(){
+		stackItems = document.getElementsByClassName("stack")
+		stackLength = stackItems.length
+		if(stackLength > 0){
+			stackItems[stackLength -1].remove()
+		}
+	}
+	function zap(){
+		stackItems = document.getElementsByClassName("stack")
+		inputTest = document.getElementById("input").value
+
+		for (i in stackItems){
+			console.log(stackItems[i].innerHTML)
+			if(stackItems[i].innerHTML == inputTest){
+				console.log("Removed " + stackItems[i].innerHTML)
+				stackItems[i].remove()
+			}
+		}
 	}
 </script>
 </html>	
