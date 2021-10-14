@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reaction Game</title>
+  <h1>Michael Simmons reaction timer</h1>
+</head>
+<body>
+
+  <p id = "target">Your time</p>
+  <p id = "countdown">Count</p>
+
+  <button>Start Timer</button>
+  <button onclick = "recordReact()">React Now</button>
+  
+  <script>
+    myTime = 0
+
+    function recordReact(){
+      myTime = Date.now()
+      console.log(myTime)
+    }
+  </script>
+
+</body>
+</html>
